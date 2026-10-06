@@ -1,0 +1,42 @@
+{
+  "input_files": [
+    "input/products_big_1.csv",
+    "input/products_big_2.csv"
+  ],
+  "merge_files": true,
+  "trim_text": true,
+  "drop_empty_rows": true,
+  "drop_duplicates": true,
+  "duplicate_column": "article",
+  "sort_rows": true,
+  "sort_column": "article",
+  "sort_ascending": true,
+  "add_source_column": true,
+  "filter_mode": "all",
+  "filters": [
+    {
+      "column": "city",
+      "operator": "equals",
+      "value": "Якутск",
+      "enabled": true
+    },
+    {
+      "column": "price",
+      "operator": "gte",
+      "value": "500",
+      "enabled": true
+    },
+    {
+      "column": "category",
+      "operator": "one_of",
+      "value": "Книги;Канцелярия",
+      "enabled": true
+    }
+  ],
+  "output_dir": "output",
+  "base_name": "result",
+  "file_format": "xlsx",
+  "output_mode": "split",
+  "split_column": "city",
+  "split_values": []
+}
