@@ -4,7 +4,7 @@ A small desktop utility for processing, filtering and splitting Excel, CSV and J
 
 DataFlow is built with **Python, PySide6 and pandas**. The project is aimed at repetitive data-cleaning tasks that are annoying to do manually: merging files, filtering rows, removing duplicates, sorting data and exporting multiple result files in one run.
 
-> Current status: **v0.1.0 — early public version**
+> Current status: **v0.2.0 — early public version**
 
 ## Features
 
@@ -32,6 +32,27 @@ DataFlow is built with **Python, PySide6 and pandas**. The project is aimed at r
 - Select only specific split values
 - CLI mode using a JSON config
 - Build a single Windows `.exe` with PyInstaller
+
+
+## Smart file analysis
+
+Before processing, DataFlow can scan the selected files and explain what it finds in plain language.
+
+It can suggest actions such as:
+
+- merge files with compatible schemas;
+- remove completely empty rows;
+- trim unnecessary whitespace in text;
+- remove full duplicate rows;
+- deduplicate likely article / ID columns;
+- split output by likely city or category columns;
+- add useful filters for price and name fields;
+- warn about columns with many missing values;
+- warn when file schemas differ before merging.
+
+Suggestions are **not applied silently**. You can apply one suggestion at a time or use the safe-cleanup button for simple non-destructive cleanup choices.
+
+The analysis runs locally and does not send user data to an external AI service.
 
 ## Example
 
