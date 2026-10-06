@@ -1,13 +1,19 @@
 import sys
+
 from PySide6.QtWidgets import QApplication
-from ui.main_window import MainWindow
+
+from ui.smart_window import SmartMainWindow
+
 
 def main() -> None:
     app = QApplication(sys.argv)
     app.setApplicationName("DataFlow")
-    window = MainWindow()
+
+    window = SmartMainWindow()
     window.show()
+
     sys.exit(app.exec())
+
 
 if __name__ == "__main__":
     main()
